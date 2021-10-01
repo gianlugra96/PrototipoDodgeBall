@@ -50,7 +50,7 @@ namespace Invector
         public static ClipPlanePoints NearClipPlanePoints(this Camera camera, Vector3 pos, float clipPlaneMargin)
         {
             var clipPlanePoints = new ClipPlanePoints();
-
+            if (camera == null) return clipPlanePoints;
             var transform = camera.transform;
             var halfFOV = (camera.fieldOfView / 2) * Mathf.Deg2Rad;
             var aspect = camera.aspect;
